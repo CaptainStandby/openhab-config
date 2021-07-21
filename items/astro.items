@@ -1,0 +1,10 @@
+DateTime         Sunrise_Time       "Sunrise [%1$tH:%1$tM]"                   { channel="astro:sun:local:rise#start" }
+DateTime         Sunset_Time        "Sunset [%1$tH:%1$tM]"                    { channel="astro:sun:local:set#start" }
+DateTime         CivilDawn_Time     "Dawn [%1$tH:%1$tM]"                      { channel="astro:sun:local:civilDawn#start" }
+DateTime         CivilDusk_Time     "Dusk [%1$tH:%1$tM]"                      { channel="astro:sun:local:civilDusk#start" }
+Number:Angle     Azimuth            "Azimuth"                                 { channel="astro:sun:local:position#azimuth" }
+Number:Angle     Elevation          "Elevation"                               { channel="astro:sun:local:position#elevation" }
+String           MoonPhase          "MoonPhase"                               { channel="astro:moon:local:phase#name" }
+Number:Length    MoonDistance       "MoonDistance [%.1f %unit%]"              { channel="astro:moon:local:distance#distance" }
+Number:Intensity Total_Radiation    "Radiation [%.2f %unit%]"                 { channel="astro:sun:local:radiation#total" }
+Number:Intensity Diffuse_Radiation  "Diffuse Radiation [%.2f %unit%]"         { channel="astro:sun:local:radiation#diffuse" }

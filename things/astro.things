@@ -1,0 +1,4 @@
+// Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
+
+Thing astro:moon:local "Moon" [ geolocation="53.56974,10.03247", interval=60 ]
+Thing astro:sun:local  "Sun"  [ geolocation="53.56974,10.03247", interval=60 ]
