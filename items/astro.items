@@ -1,10 +1,15 @@
-DateTime         Sunrise_Time       "Sunrise [%1$tH:%1$tM]"                   { channel="astro:sun:local:rise#start" }
-DateTime         Sunset_Time        "Sunset [%1$tH:%1$tM]"                    { channel="astro:sun:local:set#start" }
-DateTime         CivilDawn_Time     "Dawn [%1$tH:%1$tM]"                      { channel="astro:sun:local:civilDawn#start" }
-DateTime         CivilDusk_Time     "Dusk [%1$tH:%1$tM]"                      { channel="astro:sun:local:civilDusk#start" }
-Number:Angle     Azimuth            "Azimuth"                                 { channel="astro:sun:local:position#azimuth" }
-Number:Angle     Elevation          "Elevation"                               { channel="astro:sun:local:position#elevation" }
-String           MoonPhase          "MoonPhase"                               { channel="astro:moon:local:phase#name" }
-Number:Length    MoonDistance       "MoonDistance [%.1f %unit%]"              { channel="astro:moon:local:distance#distance" }
-Number:Intensity Total_Radiation    "Radiation [%.2f %unit%]"                 { channel="astro:sun:local:radiation#total" }
-Number:Intensity Diffuse_Radiation  "Diffuse Radiation [%.2f %unit%]"         { channel="astro:sun:local:radiation#diffuse" }
+Group Astro <sun_clouds>
+
+DateTime         Sunrise_Time       "Sunrise [%1$tH:%1$tM]"                            <sunrise>  (Astro)  {channel="astro:sun:local:rise#start"}
+DateTime         Sunset_Time        "Sunset [%1$tH:%1$tM]"                             <sunset>   (Astro)  {channel="astro:sun:local:set#start"}
+DateTime         CivilDawn_Time     "Dawn [%1$tH:%1$tM]"                                          (Astro)  {channel="astro:sun:local:civilDawn#start"}
+DateTime         CivilDusk_Time     "Dusk [%1$tH:%1$tM]"                                          (Astro)  {channel="astro:sun:local:civilDusk#start"}
+String           Day_Phase          "Phase of Day [MAP(astro_de.map):%s]"                         (Astro)  {channel="astro:sun:home:phase#name"}
+String           Moon_Phase         "Moon Phase [MAP(astro_de.map):%s]"                <moon>     (Astro)  {channel="astro:moon:local:phase#name" }
+DateTime         Moon_Next_Full     "Next Full Moon [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"  <moon>     (Astro)  {channel="astro:moon:home:phase#full"}
+DateTime         Moon_Next_New      "Next New Moon [%1$td.%1$tm.%1$tY, %1$tH:%1$tM]"   <moon>     (Astro)  {channel="astro:moon:home:phase#new"}
+Number:Intensity Total_Radiation    "Radiation [%.2f %unit%]"                                     (Astro)  {channel="astro:sun:local:radiation#total"}
+Number:Intensity Diffuse_Radiation  "Diffuse Radiation [%.2f %unit%]"                             (Astro)  {channel="astro:sun:local:radiation#diffuse"}
+String           Season_Name        "Season [MAP(astro_de.map):%s]"                               (Astro)  {channel="astro:sun:home:season#name"}
+Number           Sun_Elevation      "Sun Elevation [%.1f °]"                           <sun>      (Astro)  {channel="astro:sun:home:position#elevation"}
+Number           Moon_Elevation     "Moon Elevation [%.1f °]"                          <moon>     (Astro)  {channel="astro:moon:home:position#elevation"}
